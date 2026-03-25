@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pi Theta Iota — Official Sorority Handbook</title>
+  <meta name="description" content="Pi Theta Iota (ΠΘΙ) Official Sorority Handbook — From shadow, we bloom.">
+  <meta property="og:title" content="Pi Theta Iota — Official Sorority Handbook">
+  <meta property="og:description" content="From shadow, we bloom. Founded October 31, 2025.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap">
+  <style>
+    /* ===== Custom Properties & Reset ===== */
+    :root {
+      /* Palette */
+      --black: #000000;
+      --crimson: #8A1E2D;
+      --peach: #FFB3A7;
+      --ivory: #FFF4EC;
+      --cocoa: #4A2A2A;
+      --gold: #D6B26A;
+
+      /* Typography */
+      --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+      /* Spacing */
+      --section-padding: clamp(60px, 8vh, 120px) clamp(24px, 5vw, 80px);
+      --nav-width: 220px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-snap-type: y proximity;
+      scroll-behavior: smooth;
+      background: var(--black);
+      color: var(--ivory);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    body { background: var(--black); }
+
+    /* ===== Typography ===== */
+    .chapter-label {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .chapter-title--crimson { color: var(--crimson); }
+    .chapter-title--peach { color: var(--peach); }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    .body-text {
+      color: var(--ivory);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 680px;
+      opacity: 1;
+    }
+
+    .body-text p { margin-bottom: 16px; }
+
+    /* ===== Sacred Quote ===== */
+    .sacred-quote {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--peach);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 40px 0;
+      padding-left: 20px;
+      border-left: 2px solid var(--gold);
+    }
+
+    .sacred-quote .attribution {
+      display: block;
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    /* ===== Sections ===== */
+    .section {
+      min-height: 100vh;
+      padding: var(--section-padding);
+      padding-left: calc(var(--nav-width) + clamp(24px, 5vw, 80px));
+      scroll-snap-align: start;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section--cover {
+      align-items: center;
+      text-align: center;
+      padding-left: var(--section-padding);
+    }
+
+    .section--cocoa { background: var(--cocoa); }
+
+    /* Ember glow for fire sections */
+    .section--fire {
+      background: radial-gradient(ellipse at 0% 50%, rgba(138,30,45,0.15) 0%, transparent 50%),
+                  radial-gradient(ellipse at 100% 50%, rgba(214,178,106,0.1) 0%, transparent 50%),
+                  var(--black);
+    }
+
+    /* Subtle vignette for standard sections */
+    .section--vignette {
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.4) 100%),
+                  var(--black);
+    }
+
+    /* Gold divider line */
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 32px 0;
+    }
+
+    .divider--wide { width: 160px; }
+    .divider--center { margin: 32px auto; }
+
+    /* Sacred geometry — faint diamond pattern for ceremonial sections */
+    .section--ceremonial {
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(214,178,106,0.03) 40px, rgba(214,178,106,0.03) 41px),
+        repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(214,178,106,0.03) 40px, rgba(214,178,106,0.03) 41px);
+    }
+    /* Combine with fire or cocoa backgrounds via multiple classes */
+    .section--fire.section--ceremonial {
+      background:
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(214,178,106,0.03) 40px, rgba(214,178,106,0.03) 41px),
+        repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(214,178,106,0.03) 40px, rgba(214,178,106,0.03) 41px),
+        radial-gradient(ellipse at 0% 50%, rgba(138,30,45,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 100% 50%, rgba(214,178,106,0.1) 0%, transparent 50%),
+        var(--black);
+    }
+
+    /* ===== Ember-Pulse Animation ===== */
+    @keyframes ember-pulse {
+      0%, 100% { border-color: var(--gold); opacity: 0.7; }
+      50% { border-color: var(--crimson); opacity: 1; }
+    }
+
+    .ember-border {
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      animation: ember-pulse 4s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ember-border {
+        animation: none;
+        border-color: var(--gold);
+        opacity: 1;
+      }
+    }
+
+    /* ===== Swan SVG Styles ===== */
+    .swan-mark { fill: var(--gold); }
+    .swan-mark-stroke { stroke: var(--gold); fill: none; }
+
+    .swan-icon { width: 28px; height: 28px; }
+    .swan-divider { width: 48px; height: 48px; margin: 24px auto; }
+    .swan-cover { width: 120px; height: 120px; }
+
+    /* Cover variant — gold fill on cover page */
+    .section--cover .swan-mark { fill: var(--gold); }
+    .section--cover .swan-mark-stroke { stroke: var(--gold); }
+
+    /* ===== Nav Toggle (CSS Checkbox Hack) ===== */
+    #nav-toggle { display: none; }
+
+    .nav-hamburger {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      color: var(--gold);
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--nav-width);
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      padding: 40px 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @supports not (backdrop-filter: blur(1px)) {
+      .nav { background: rgba(0,0,0,0.95); }
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(214,178,106,0.3);
+    }
+
+    .nav-letters {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 6px 10px;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-variant: small-caps;
+      letter-spacing: 2px;
+      color: var(--ivory);
+      opacity: 0.7;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      border-radius: 4px;
+    }
+
+    .nav-list a:hover {
+      opacity: 1;
+      background: rgba(214,178,106,0.1);
+    }
+
+    /* ===== Component Classes ===== */
+
+    /* Symbol Grid */
+    .symbol-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .symbol-card {
+      border-top: 2px solid var(--gold);
+      padding-top: 16px;
+    }
+    .symbol-card .symbol-essence {
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: var(--peach);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    /* Value Block */
+    .value-block {
+      margin-bottom: 36px;
+      padding-left: 20px;
+      border-left: 2px solid rgba(214,178,106,0.3);
+    }
+    .value-essence {
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: var(--peach);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    /* Color Grid */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      margin: 32px 0;
+      text-align: center;
+    }
+    .color-card .swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+    }
+    .color-card .color-name {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .color-card .hex {
+      font-size: 0.7rem;
+      color: var(--ivory);
+      opacity: 0.6;
+      margin-bottom: 6px;
+    }
+    .color-card .color-meaning {
+      font-size: 0.75rem;
+      color: var(--ivory);
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    /* Stone Grid */
+    .stone-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .stone-card {
+      padding: 24px;
+      border: 1px solid rgba(214,178,106,0.3);
+      border-radius: 4px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* Rules List */
+    .rules-list {
+      counter-reset: rule;
+      max-width: 680px;
+    }
+    .rule-item {
+      margin-bottom: 28px;
+      padding-left: 20px;
+      border-left: 2px solid rgba(214,178,106,0.2);
+    }
+    .rule-item::before {
+      counter-increment: rule;
+      content: counter(rule, upper-roman);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .rule-decree {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--ivory);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .rule-expansion {
+      font-size: 0.85rem;
+      color: var(--ivory);
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+
+    /* Tier Diagram */
+    .tier-diagram {
+      max-width: 680px;
+      margin-top: 32px;
+    }
+    .tier {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(214,178,106,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+    }
+    .tier:first-child { border-left: 3px solid var(--crimson); }
+    .tier:nth-child(2) { padding-left: 40px; }
+    .tier:nth-child(3) { padding-left: 60px; }
+    .tier:nth-child(4) { padding-left: 80px; }
+    .tier-name {
+      font-family: var(--font-heading);
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .tier-roles {
+      font-size: 0.8rem;
+      color: var(--ivory);
+      opacity: 0.85;
+      text-align: right;
+    }
+
+    /* Role Item */
+    .role-item {
+      margin-bottom: 20px;
+      padding-left: 20px;
+      border-left: 1px solid rgba(214,178,106,0.2);
+    }
+    .role-title {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .role-holder {
+      font-size: 0.75rem;
+      color: var(--ivory);
+      opacity: 0.5;
+      margin-bottom: 6px;
+    }
+    .role-desc {
+      font-size: 0.85rem;
+      color: var(--ivory);
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+
+    /* Cause Grid */
+    .cause-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .cause-card {
+      padding: 24px;
+      border: 1px solid rgba(255,179,167,0.2);
+      border-radius: 4px;
+    }
+
+    /* Appendix */
+    .section--appendix {
+      min-height: auto;
+      padding-top: 60px;
+      padding-bottom: 80px;
+      border-top: 1px solid rgba(214,178,106,0.15);
+    }
+    .appendix-title {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.5;
+      margin-bottom: 24px;
+    }
+    .appendix-list {
+      list-style: none;
+      max-width: 600px;
+    }
+    .appendix-list li {
+      font-size: 0.8rem;
+      color: var(--ivory);
+      opacity: 0.5;
+      line-height: 1.8;
+      padding-left: 16px;
+      border-left: 1px solid rgba(214,178,106,0.1);
+      margin-bottom: 12px;
+    }
+
+    /* Identity Block */
+    .identity-block {
+      margin: 40px 0;
+      max-width: 520px;
+    }
+    .identity-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(214,178,106,0.12);
+    }
+    .identity-row:first-child {
+      border-top: 1px solid rgba(214,178,106,0.12);
+    }
+    .identity-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-right: 24px;
+    }
+    .identity-value {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--ivory);
+      text-align: right;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .section {
+        padding-left: clamp(24px, 5vw, 80px);
+      }
+
+      .section--cover {
+        padding-left: clamp(24px, 5vw, 80px);
+      }
+
+      .nav-hamburger { display: block; }
+
+      .nav {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      #nav-toggle:checked ~ .nav {
+        transform: translateX(0);
+      }
+
+      .symbol-grid { grid-template-columns: 1fr; }
+      .color-grid { grid-template-columns: repeat(3, 1fr); }
+      .stone-grid { grid-template-columns: 1fr; }
+      .cause-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== Print Stylesheet ===== */
+    @media print {
+      .nav, .nav-hamburger, #nav-toggle { display: none !important; }
+
+      html { scroll-snap-type: none; }
+
+      .section {
+        min-height: auto;
+        padding: 40px 60px;
+        padding-left: 60px;
+        background: #FFF4EC !important;
+        color: #000 !important;
+      }
+
+      .section--fire,
+      .section--cocoa,
+      .section--vignette {
+        background: #FFF4EC !important;
+      }
+
+      .body-text, .body-text p { color: #000 !important; opacity: 1 !important; }
+
+      .chapter-title, .chapter-label, .section-heading, .divider {
+        color: var(--gold) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      .chapter-title--crimson { color: var(--crimson) !important; }
+
+      .sacred-quote {
+        color: var(--peach) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      .sacred-quote .attribution {
+        color: var(--gold) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      .ember-border {
+        animation: none !important;
+        border-color: var(--gold) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      /* Page breaks between Acts */
+      .act-break { page-break-before: always; }
+
+      /* Avoid breaking inside content blocks */
+      .value-block, .stone-card, .rule-item, .sacred-quote {
+        page-break-inside: avoid;
+      }
+
+      .swan-mark { fill: #000 !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Black Swan SVG Definition (referenced via <use href="#swan">) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+      <symbol id="swan" viewBox="0 0 100 100">
+        <!-- Simplified geometric black swan silhouette, facing left, wings slightly raised -->
+        <path d="M72 85c-8 0-18-2-26-8-12-9-18-22-16-38 1-8 4-14 8-18 3-3 6-5 10-6 2-1 4 0 5 1 2 2 1 5-1 6-3 1-5 3-7 5-3 3-5 8-6 14-1 13 3 23 13 31 6 5 14 7 20 7 3 0 5 2 5 5s-2 5-5 5l-2-1c1 0 2-1 2-3z" class="swan-mark"/>
+        <path d="M48 22c-2-4-5-7-9-9-3-2-7-3-11-3-2 0-4-2-4-4s2-4 4-4c5 0 10 1 15 4 5 3 9 7 11 12 1 2 0 5-2 6s-5 0-6-2z" class="swan-mark"/>
+        <!-- Neck curve -->
+        <path d="M38 42c-4-8-2-18 4-24 3-3 7-5 11-5" fill="none" stroke-width="2.5" class="swan-mark-stroke"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <input type="checkbox" id="nav-toggle">
+  <label for="nav-toggle" class="nav-hamburger" aria-label="Toggle navigation">&#9776;</label>
+
+  <nav class="nav">
+    <div class="nav-brand">
+      <svg class="swan-icon"><use href="#swan"/></svg>
+      <span class="nav-letters">&#928;&#920;&#921;</span>
+    </div>
+    <ul class="nav-list">
+      <li><a href="#cover">Cover</a></li>
+      <li><a href="#title">Title</a></li>
+      <li><a href="#manifesto">Manifesto</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#velithra">Velithra</a></li>
+      <li><a href="#symbols">Symbols</a></li>
+      <li><a href="#fire">Fire</a></li>
+      <li><a href="#values">Core Values</a></li>
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#stones">Sacred Stones</a></li>
+      <li><a href="#seraphye">The Seraphye</a></li>
+      <li><a href="#conduct">Code of Conduct</a></li>
+      <li><a href="#structure">Structure</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#philanthropy">Philanthropy</a></li>
+      <li><a href="#traditions">Traditions</a></li>
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#creed">Closing Creed</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="cover" class="section section--cover">
+<svg class="swan-cover"><use href="#swan"/></svg>
+
+<h1 class="chapter-title" style="font-size: clamp(4rem, 10vw, 8rem); letter-spacing: 0.3em; margin-top: 48px;">&Pi;&Theta;&Iota;</h1>
+
+<div class="divider divider--center"></div>
+
+<p class="sacred-quote" style="font-size: 1.25rem; margin-top: 24px;">"From shadow, we bloom."</p>
+
+<p class="body-text" style="margin-top: 48px; opacity: 0.6; letter-spacing: 0.2em; font-size: 0.85rem;">FOUNDED OCTOBER 31, 2025</p>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="title" class="section section--vignette">
+<span class="chapter-label">OFFICIAL SORORITY HANDBOOK</span>
+
+<h1 class="chapter-title" style="margin-top: 16px;">PI THETA IOTA</h1>
+
+<p class="chapter-title--peach" style="font-style: italic; font-size: 1.5rem; margin-top: 12px;">The Huntress</p>
+
+<div class="divider divider--wide divider--center" style="margin: 40px auto;"></div>
+
+<p class="body-text" style="max-width: 480px; text-align: center; margin: 0 auto; opacity: 0.8;">Founded October 31, 2025<br>under the divine protection of<br><em style="color: var(--peach);">Velithra, The Veiled One</em></p>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="manifesto" class="section section--fire act-break">
+<span class="chapter-label">ACT I</span>
+<h2 class="chapter-title chapter-title--crimson">The Manifesto</h2>
+
+<div class="divider divider--center"></div>
+
+<div class="ember-border" style="max-width: 600px; margin: 40px auto;">
+
+<p class="body-text" style="margin-bottom: 24px;">
+We were not born in the light.<br>
+We were shaped in the dark &mdash; quiet, watching,<br>
+learning the weight of our own silence.<br>
+The shadow was never a wound. It was the womb.
+</p>
+
+<p class="body-text" style="margin-bottom: 24px;">
+Then came the fire.<br>
+Not given. Not borrowed. <em>Ignited.</em><br>
+A burning that did not destroy us<br>
+but revealed what we had always carried.
+</p>
+
+<p class="body-text" style="margin-bottom: 24px;">
+We found each other in the glow.<br>
+Women who refused to dim,<br>
+who built something sacred from the ash &mdash;<br>
+a sisterhood forged in controlled flame,<br>
+bound not by obligation, but by fire chosen.
+</p>
+
+<p class="body-text" style="margin-bottom: 32px;">
+We are the Huntress. We do not wait. We do not waver.<br>
+We walk forward &mdash; soft hands, sharp wisdom,<br>
+and a flame that answers to no one.
+</p>
+
+</div>
+
+<div class="sacred-quote" style="text-align: center; max-width: 520px; margin: 48px auto 0;">
+<p style="font-size: 1.25rem;">"From flame, we are forged. In fire, we remain."</p>
+<p class="attribution">&mdash; The Fire Creed of Pi Theta Iota</p>
+</div>
+    </section>
+
+    <section id="about" class="section section--vignette act-break">
+<span class="chapter-label">Act II</span>
+<h2 class="chapter-title">About <span class="chapter-title--gold">Pi Theta Iota</span></h2>
+
+<div class="divider--wide"></div>
+
+<p class="body-text">Pi Theta Iota was founded on October 31, 2025, under the divine protection of Velithra — goddess of love, shadows, and silent justice. What began as a whisper between women who refused to be ordinary became a sisterhood forged in fire and sealed in intention. We did not come together by accident. We were called.</p>
+
+<p class="body-text">Our letters — <strong>ΠΘΙ</strong> — are not merely Greek. They are a mark. A signal to those who understand that femininity is not fragile, that elegance carries weight, and that the women who move in silence leave the deepest scars on history. We are known as <strong>The Huntress</strong> — not for what we chase, but for what we choose to protect.</p>
+
+<p class="body-text">Shadow is where we were born. Moonlight is what guided us. Fire is what we became. The darkness that sheltered us in the beginning was never weakness &mdash; it was incubation. The moonlight that found us there was never an accident &mdash; it was destiny. And what emerged from that stillness, illuminated and ablaze, is something that cannot be dimmed, diluted, or undone.</p>
+
+<div class="divider--center"></div>
+
+<h3 class="section-heading">Our Mission</h3>
+
+<p class="body-text">Pi Theta Iota exists to cultivate a sisterhood rooted in divine feminine power, leadership, resilience, and legacy. We are committed to uplifting one another through unity, discipline, creativity, and strength. Our organization empowers women to lead with courage, protect what we build, and grow spiritually, mentally, and collectively. Through symbolism, sacred intention, and unbreakable bonds, we stand as protectors of our vision and architects of our future.</p>
+
+<div class="divider--center"></div>
+
+<h3 class="section-heading">Identity</h3>
+
+<div class="identity-block">
+  <div class="identity-row"><span class="identity-label">Letters</span><span class="identity-value">ΠΘΙ</span></div>
+  <div class="identity-row"><span class="identity-label">Nickname</span><span class="identity-value">The Huntress</span></div>
+  <div class="identity-row"><span class="identity-label">Colors</span><span class="identity-value">Crimson, Bright Peach, Soft Ivory, Cocoa Brown, Warm Gold</span></div>
+  <div class="identity-row"><span class="identity-label">Element</span><span class="identity-value">Fire, Shadow &amp; Moonlight</span></div>
+  <div class="identity-row"><span class="identity-label">Flower</span><span class="identity-value">Black Star Gladiolus</span></div>
+  <div class="identity-row"><span class="identity-label">Stones</span><span class="identity-value">Garnet, Black Obsidian, Red Jasper</span></div>
+  <div class="identity-row"><span class="identity-label">Sacred Animal</span><span class="identity-value">The Seraphye — Black Swan</span></div>
+  <div class="identity-row"><span class="identity-label">Founded</span><span class="identity-value">October 31, 2025</span></div>
+</div>
+
+<div class="divider--center"></div>
+
+<div class="sacred-quote">"From shadow, we bloom."<span class="attribution">— Legacy Motto of ΠΘΙ</span></div>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="velithra" class="section section--vignette">
+<h2 class="chapter-title chapter-title--peach">The Goddess <span class="chapter-title--peach">Velithra</span></h2>
+<p class="body-text" style="font-style: italic; opacity: 0.85;">veh-LITH-ruh — The Veiled One</p>
+
+<div class="divider--wide"></div>
+
+<h3 class="section-heading">Domain</h3>
+
+<p class="body-text">Goddess of Love, Shadows, and Silent Justice. Velithra rules the twilight hour — that trembling edge where love and vengeance meet and cannot be told apart. She is the restraint before the reckoning. The pause before the blade. Her dominion is not chaos; it is the controlled burn. Every flame she carries was once a wound she chose to transfigure into power. She does not destroy carelessly. She destroys with precision, with grace, and only what deserves to fall.</p>
+
+<h3 class="section-heading">Appearance</h3>
+
+<p class="body-text">Hair like dark silk threaded with starlight — as though the night itself chose to pour down her shoulders. Her eyes shift between blush and violet depending on her temperament: soft when she offers mercy, deep and unreadable when mercy has expired. She moves the way candlelight moves — present everywhere, belonging to no one, impossible to hold.</p>
+
+<h3 class="section-heading">Personality</h3>
+
+<p class="body-text">Velithra does not raise her voice. She has never needed to. There is a fire that lives inside her calm — a heat so steady it bends the air around her without a single visible flame. She loves deeply and without apology. She protects silently and without warning. She forgives once. Those who mistake her softness for absence learn, eventually, that stillness is where her power is most concentrated.</p>
+
+<h3 class="section-heading">Origin</h3>
+
+<p class="body-text">When Aphrodite tried to erase the memory of mortal love — to sever the thread between divine desire and human devotion — something was left behind. The leftover pieces of heartbreak, moonlight, and longing that even a goddess could not destroy gathered in the space between worlds. From that residue, Velithra was born. Not created. Not summoned. Assembled from everything love tried to forget. She is the evidence that what is felt deeply enough cannot be unmade.</p>
+
+<h3 class="section-heading">Sacred Offerings</h3>
+
+<p class="body-text">Black roses laid without explanation. Moonlit baths taken in silence. Whispered confessions spoken to no one and meant for her alone. Mirrors placed facing the night sky — so she may see herself in those who carry her flame. These are not rituals of worship. They are acts of recognition. Velithra is not prayed to. She is embodied.</p>
+
+<h3 class="section-heading">Connection to Sisters</h3>
+
+<p class="body-text">Velithra is not above us. She moves through us. Every sister who has loved without flinching, who has held her ground when the world demanded she shrink, who has turned her scars into sovereignty — she is carrying Velithra's fire whether she knows it or not. We do not worship her. We <em>become</em> her. Every act of silent strength, every moment of deliberate grace under pressure, is Velithra breathing through us.</p>
+
+<div class="divider--center"></div>
+
+<div class="sacred-quote">"I was not born from love. I was born from what love left behind — and I made it sharper."<span class="attribution">— Voice of Velithra</span></div>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="symbols" class="section section--vignette">
+<h2 class="chapter-title">Sacred Symbols <span class="chapter-title--gold">& Iconography</span></h2>
+
+<div class="divider--wide"></div>
+
+<p class="body-text">Nine symbols define the language of ΠΘΙ. Each one carries a truth that words alone cannot hold — pressed into glass, etched into silver, reflected in smoke. They are not decoration. They are doctrine.</p>
+
+<div class="symbol-grid">
+
+  <div class="symbol-card">
+    <h3 class="section-heading">The Black Glass Rose</h3>
+    <p class="symbol-essence">Love that draws blood.</p>
+    <p class="body-text">Beautiful and impossible to hold without consequence. The Black Glass Rose represents the kind of love ΠΘΙ sisters carry — deep, deliberate, and never without edge. It does not apologize for the cut. It reminds you that anything worth holding will demand something from your hands.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">The Silver Veil</h3>
+    <p class="symbol-essence">What is sacred stays hidden until it chooses to be seen.</p>
+    <p class="body-text">The Silver Veil is secrecy as protection, not deception. It is the understanding that not everything belongs to the world. Some truths are kept not because they are shameful, but because they are too powerful to be handed to those who have not earned them.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">The Fading Candle</h3>
+    <p class="symbol-essence">Desire and vengeance share the same flame.</p>
+    <p class="body-text">The most sacred of our fire symbols. The Fading Candle teaches that passion and justice burn from the same wick — one does not exist without the other. As the flame lowers, it does not weaken. It concentrates. The final inch of fire is always the hottest. This is where we live.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">The Seraphye</h3>
+    <p class="symbol-essence">Transformation made flesh. Shadow given wings.</p>
+    <p class="body-text">The Black Swan of ΠΘΙ — elegant, ominous, untouchable. The Seraphye represents the woman who has passed through pain and emerged not broken but transfigured. She does not fly from the fire. She carries it in the darkness of her wings, silent and absolute.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">Mirror Kissed by Smoke</h3>
+    <p class="symbol-essence">The truth you see when the illusion clears.</p>
+    <p class="body-text">A mirror obscured by smoke reveals only what is real once the air settles. This symbol speaks to temptation and truth — the understanding that desire can cloud vision, but clarity always returns for those patient enough to wait. ΠΘΙ sisters learn to see through the smoke, not avoid it.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">Broken Mirror Shards</h3>
+    <p class="symbol-essence">Every fracture becomes armor.</p>
+    <p class="body-text">Where others see destruction, we see material. Broken Mirror Shards represent the lessons extracted from pain — sharp, reflective, and repurposed. A sister of ΠΘΙ does not mourn what shattered. She picks up the pieces and lines her shield with them.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">The Broken Heart</h3>
+    <p class="symbol-essence">The only heart worth carrying is one that has survived.</p>
+    <p class="body-text">Not a symbol of defeat. A symbol of proof. The Broken Heart belongs to the woman who loved fully, lost completely, and chose to remain open. Resilience is not the absence of damage — it is the decision to keep beating after the fracture. This is the heartbeat of ΠΘΙ.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">The Black Shield</h3>
+    <p class="symbol-essence">Protection is not passive. It is a position.</p>
+    <p class="body-text">The Black Shield is raised deliberately. It represents the active choice to guard what matters — your sisters, your peace, your sacred space. ΠΘΙ does not wait for threats to arrive. The shield is always held. The stance is always ready. Protection here is not reaction. It is discipline.</p>
+  </div>
+
+  <div class="symbol-card">
+    <h3 class="section-heading">The Silver Crown</h3>
+    <p class="symbol-essence">Divinity earned, not inherited.</p>
+    <p class="body-text">The Silver Crown is not given. It is recognized. It represents the divine authority that comes from walking through fire, holding your sisters close, and leading without demanding to be followed. Leadership in ΠΘΙ is quiet, certain, and unmistakable — a crown that never needs to announce itself.</p>
+  </div>
+
+</div>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="fire" class="section section--fire section--ceremonial">
+<h2 class="chapter-title chapter-title--crimson">Element: Fire, Shadow &amp; Moonlight</h2>
+
+<div class="divider--wide"></div>
+
+<p class="body-text">Three elements live together in every sister of &Pi;&Theta;&Iota;. Shadow is the origin &mdash; the dark, quiet womb where we were shaped before the world ever knew our names. Moonlight is the guidance &mdash; the silver thread that led us through the darkness, illuminating the path without burning it away. And Fire is the transformation &mdash; the moment we chose to stop hiding what we carried and let it blaze.</p>
+
+<p class="body-text">Shadow taught us to move in silence. Moonlight taught us to see without being seen. Fire taught us to become impossible to ignore. These three are not separate forces &mdash; they are one identity. The shadow is where we were born, the moonlight is what guided us forward, and the fire is what we became. Together, they are the elemental truth of &Pi;&Theta;&Iota;: sacred, intentional, and carried with the understanding that women who hold all three elements do not merely survive &mdash; they transform everything they touch.</p>
+
+<div class="divider--center"></div>
+
+<h3 class="section-heading">The Five Principles of Fire</h3>
+
+<div class="ember-border">
+  <h4 class="section-heading">Rebirth</h4>
+  <p class="body-text">We are not who we were. We burned that away. Every sister who enters ΠΘΙ surrenders the version of herself that was shaped by fear, expectation, and compromise. What rises from that surrender is not a new woman — it is the real one, finally unobstructed. Rebirth is not death. It is the fire clearing everything that was never truly yours.</p>
+</div>
+
+<div class="ember-border">
+  <h4 class="section-heading">Power</h4>
+  <p class="body-text">The flame does not ask permission. It does not wait for approval. It does not shrink to make the room more comfortable. Power, as we carry it, is not volume — it is temperature. The woman who walks into a room and shifts the air without speaking a word understands this principle. ΠΘΙ power is felt before it is seen.</p>
+</div>
+
+<div class="ember-border">
+  <h4 class="section-heading">Transformation</h4>
+  <p class="body-text">What the fire touches, it changes forever. There is no returning to what you were before the flame. This is not loss — this is evolution. Every trial, every heartbreak, every betrayal that should have broken you instead became fuel. Transformation is the fire's gift to those who refuse to be consumed by it.</p>
+</div>
+
+<div class="ember-border">
+  <h4 class="section-heading">Controlled Destruction</h4>
+  <p class="body-text">We choose what burns. Not everything deserves to be preserved. Controlled destruction is the discipline to identify what no longer serves — habits, relationships, patterns, versions of yourself that have outlived their purpose — and to release them deliberately into flame. ΠΘΙ does not burn recklessly. We burn with intention, and we leave nothing behind that we did not mean to lose.</p>
+</div>
+
+<div class="ember-border">
+  <h4 class="section-heading">Inner Flame</h4>
+  <p class="body-text">The fire you cannot see is the one that keeps you alive. Every sister carries a flame that no storm, no betrayal, no season of silence can extinguish. It is the conviction that lives beneath composure. The certainty that burns behind still eyes. The inner flame is ΠΘΙ's most sacred fire — the one that was never given to you, because it was always yours.</p>
+</div>
+
+<div class="divider--center"></div>
+
+<p class="sacred-quote">"From flame, we are forged. In fire, we remain."</p>
+<p class="attribution">— The Fire Creed of ΠΘΙ</p>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="values" class="section section--vignette act-break">
+<span class="chapter-label">ACT III</span>
+<h2 class="chapter-title">Core Values</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="sacred-quote" style="max-width: 520px; margin: 32px auto; text-align: center;">"She who knows herself cannot be undone."<br><span class="attribution">&mdash; Voice of Velithra</span></p>
+
+<div style="max-width: 680px; margin: 0 auto;">
+
+<div class="value-block">
+  <h3 class="section-heading">Duality</h3>
+  <p class="value-essence">Embrace both light and shadow &mdash; they were never at war.</p>
+  <p class="body-text">A Huntress does not choose between her softness and her steel. She carries both, deliberately. The fire that forged her did not burn away her tenderness &mdash; it tempered it. She is gentle when she means it, ruthless when she must be, and never ashamed of either. Duality is not contradiction. It is completeness.</p>
+</div>
+
+<div class="value-block">
+  <h3 class="section-heading">Protection</h3>
+  <p class="value-essence">Guard your peace, your sisters, your truth.</p>
+  <p class="body-text">What we build, we defend. Not with noise, not with spectacle &mdash; with presence. A Huntress stands between her sisters and whatever threatens the flame. She protects reputation, energy, sacred space, and the bonds that hold this sorority together. The shield is quiet. The shield is constant. And it never drops.</p>
+</div>
+
+<div class="value-block">
+  <h3 class="section-heading">Temptation</h3>
+  <p class="value-essence">Own your allure, your mystery, your divine presence.</p>
+  <p class="body-text">There is power in being wanted and wisdom in being unreachable. A Huntress moves through the world with an energy that draws people in &mdash; not because she performs, but because she is unafraid to be magnetic. Temptation is not manipulation. It is the fire made visible. The warmth that pulls others closer while she decides who stays.</p>
+</div>
+
+<div class="value-block">
+  <h3 class="section-heading">Love</h3>
+  <p class="value-essence">Lead with compassion, even when it burns.</p>
+  <p class="body-text">Love in this sisterhood is not passive. It corrects. It challenges. It holds a mirror up when the reflection is uncomfortable. A Huntress loves fiercely enough to be honest, patient enough to wait for growth, and strong enough to carry her sisters without keeping score. This love is the core of the flame &mdash; the heat that sustains, not destroys.</p>
+</div>
+
+<div class="value-block">
+  <h3 class="section-heading">Revenge</h3>
+  <p class="value-essence">Seek justice with elegance, never chaos.</p>
+  <p class="body-text">A Huntress does not forget. But she does not spiral. When wronged, she responds with precision &mdash; measured, intentional, devastating in its composure. Revenge is not rage. It is the controlled burn: clearing what no longer serves, leaving nothing but ash where betrayal stood. She does not lower herself to the level of what hurt her. She rises, and that is the answer.</p>
+</div>
+
+<div class="value-block">
+  <h3 class="section-heading">Power</h3>
+  <p class="value-essence">Walk unbothered, unshaken, unforgettable.</p>
+  <p class="body-text">Power is not volume. It is the silence that commands a room. A Huntress carries herself as though the ground beneath her is hers &mdash; because it is. She does not compete for attention; she occupies space with such certainty that the world adjusts. Power is the final value because it is the sum of all the others: duality mastered, protection enforced, temptation owned, love given freely, justice delivered. She walks in fire and does not flinch.</p>
+</div>
+
+</div>
+
+<div class="swan-divider"><svg width="48" height="48"><use href="#swan"/></svg></div>
+    </section>
+
+    <section id="colors" class="section section--vignette">
+<span class="chapter-label">VISUAL IDENTITY</span>
+<h2 class="chapter-title">Color System</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="body-text" style="max-width: 560px; margin: 0 auto 40px; text-align: center; opacity: 0.8;">Every color in Pi Theta Iota carries meaning. Nothing is decorative. Nothing is accidental. These five colors are the visual language of the sisterhood &mdash; worn, displayed, and honored.</p>
+
+<div class="color-grid">
+
+  <div class="color-card">
+    <div class="swatch" style="background: #8A1E2D;"></div>
+    <p class="color-name" style="color: #8A1E2D;">Crimson</p>
+    <p class="hex">#8A1E2D</p>
+    <p class="color-meaning">Sacred fire. The power that guards.</p>
+  </div>
+
+  <div class="color-card">
+    <div class="swatch" style="background: #FFB3A7;"></div>
+    <p class="color-name" style="color: #FFB3A7;">Bright Peach</p>
+    <p class="hex">#FFB3A7</p>
+    <p class="color-meaning">Divine softness. The voice that heals.</p>
+  </div>
+
+  <div class="color-card">
+    <div class="swatch" style="background: #FFF4EC;"></div>
+    <p class="color-name" style="color: #FFF4EC;">Soft Ivory</p>
+    <p class="hex">#FFF4EC</p>
+    <p class="color-meaning">Clarity. The truth beneath.</p>
+  </div>
+
+  <div class="color-card">
+    <div class="swatch" style="background: #4A2A2A;"></div>
+    <p class="color-name" style="color: #4A2A2A;">Cocoa Brown</p>
+    <p class="hex">#4A2A2A</p>
+    <p class="color-meaning">Grounding. The earth that holds.</p>
+  </div>
+
+  <div class="color-card">
+    <div class="swatch" style="background: #D6B26A;"></div>
+    <p class="color-name" style="color: #D6B26A;">Warm Gold</p>
+    <p class="hex">#D6B26A</p>
+    <p class="color-meaning">Divinity. The crown we carry.</p>
+  </div>
+
+</div>
+
+<div class="divider divider--center" style="margin: 48px auto 32px;"></div>
+
+<h3 class="section-heading" style="text-align: center; margin-bottom: 24px;">Pairing Rules</h3>
+
+<div style="max-width: 560px; margin: 0 auto;">
+  <p class="body-text" style="margin-bottom: 12px;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #000; vertical-align: middle; margin-right: 4px;"></span><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #D6B26A; vertical-align: middle; margin-right: 8px;"></span><strong style="color: var(--gold);">Black + Warm Gold</strong> &mdash; Primary pairing. Headers, titles, section breaks.</p>
+
+  <p class="body-text" style="margin-bottom: 12px;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #000; vertical-align: middle; margin-right: 4px;"></span><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #8A1E2D; vertical-align: middle; margin-right: 8px;"></span><strong style="color: var(--gold);">Black + Crimson</strong> &mdash; Fire and ceremonial sections only.</p>
+
+  <p class="body-text" style="margin-bottom: 12px;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #4A2A2A; vertical-align: middle; margin-right: 4px;"></span><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #FFF4EC; vertical-align: middle; margin-right: 8px;"></span><strong style="color: var(--gold);">Cocoa + Ivory</strong> &mdash; Grounded, earthy sections.</p>
+
+  <p class="body-text" style="margin-bottom: 12px;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #FFB3A7; vertical-align: middle; margin-right: 4px;"></span><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #D6B26A; vertical-align: middle; margin-right: 8px;"></span><strong style="color: var(--gold);">Peach + Gold</strong> &mdash; Sacred quotes. Velithra's voice.</p>
+</div>
+
+<div class="swan-divider"><svg width="48" height="48"><use href="#swan"/></svg></div>
+    </section>
+
+    <section id="stones" class="section section--cocoa">
+<span class="chapter-label">SACRED ELEMENTS</span>
+<h2 class="chapter-title">Sacred Stones</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="sacred-quote" style="max-width: 520px; margin: 32px auto; text-align: center;">"What the earth remembers, the body carries."<br><span class="attribution">&mdash; Voice of Velithra</span></p>
+
+<p class="body-text" style="max-width: 600px; margin: 0 auto 40px; text-align: center; opacity: 0.8;">Three stones anchor the Huntress to her power. Each one was chosen for what it holds &mdash; not beauty, but meaning. They are the earth's memory of fire.</p>
+
+<div class="stone-grid">
+
+  <div class="stone-card">
+    <h3 class="section-heading">Garnet</h3>
+    <p class="value-essence">Passion &middot; Life Force &middot; Devotion</p>
+    <p class="body-text">Garnet is the stone of the inner flame &mdash; the pulse beneath composure, the devotion that does not waver. It is tied to Love, the value that burns hottest without consuming. A Huntress who carries garnet carries proof that tenderness and fire are the same thing. It reminds her: devotion is not weakness. It is the most controlled burn of all.</p>
+  </div>
+
+  <div class="stone-card">
+    <h3 class="section-heading">Black Obsidian</h3>
+    <p class="value-essence">Protection &middot; Truth &middot; Grounding</p>
+    <p class="body-text">Born from volcanic fire and cooled into darkness, obsidian is the stone of controlled destruction. It absorbs what should not reach you and reflects what needs to be seen. Tied to Protection, it is the Huntress at her most vigilant &mdash; shielding the sisterhood from what corrodes. Black obsidian does not lie. It shows the truth, even when the truth is sharp.</p>
+  </div>
+
+  <div class="stone-card">
+    <h3 class="section-heading">Red Jasper</h3>
+    <p class="value-essence">Endurance &middot; Stability &middot; Strength</p>
+    <p class="body-text">Red jasper is the slow fire &mdash; the kind that does not flare and fade but holds steady through everything. It is tied to Power and Transformation, the values that demand a woman who does not break under pressure. Red jasper is the stone of the Huntress who has been tested, bent, refined &mdash; and emerged harder. It is endurance made mineral. Strength made permanent.</p>
+  </div>
+
+</div>
+
+<div class="swan-divider"><svg width="48" height="48"><use href="#swan"/></svg></div>
+    </section>
+
+    <section id="seraphye" class="section section--vignette">
+<span class="chapter-label">THE GUARDIAN</span>
+<h2 class="chapter-title chapter-title--peach">The Seraphye</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="body-text" style="text-align: center; opacity: 0.85; letter-spacing: 0.15em; font-size: 0.85rem; margin-bottom: 32px;">ALSO KNOWN AS: NYXARA, THE BLACK SWAN</p>
+
+<div style="max-width: 640px; margin: 0 auto;">
+
+<p class="body-text" style="margin-bottom: 20px;">She does not announce herself. She arrives &mdash; and the room changes temperature.</p>
+
+<p class="body-text" style="margin-bottom: 20px;">The Seraphye is the guardian spirit of Pi Theta Iota: a black swan moving through flame, untouched. She is not celestial. She is not soft. She is elegant in the way that something dangerous can be elegant &mdash; precise, deliberate, impossible to look away from. Shadow made physical. Fire made graceful.</p>
+
+<p class="body-text" style="margin-bottom: 20px;">She emerged from the same forge that shaped the sisterhood. Where others burned away, she condensed &mdash; darker, denser, more herself. She carries the flame not as a torch but as a presence. You do not see her burn. You feel the heat when she passes.</p>
+
+<p class="body-text" style="margin-bottom: 40px;">She is what every Huntress aspires to become: ominous enough to ward off what threatens the sacred, beautiful enough to remind the sisterhood what they protect.</p>
+
+<div class="divider divider--center"></div>
+
+<h3 class="section-heading" style="text-align: center; margin: 32px 0 24px;">What She Represents</h3>
+
+<div class="value-block">
+  <h4 class="section-heading" style="font-size: 0.85rem;">Transformation</h4>
+  <p class="body-text">She emerged from fire more powerful than what entered it. The Seraphye is proof that destruction is not the end &mdash; it is the prerequisite.</p>
+</div>
+
+<div class="value-block">
+  <h4 class="section-heading" style="font-size: 0.85rem;">Loyalty</h4>
+  <p class="body-text">Her devotion to the sisterhood was forged in flame, not circumstance. She does not guard out of obligation. She guards because she chose the fire and everything it protects.</p>
+</div>
+
+<div class="value-block">
+  <h4 class="section-heading" style="font-size: 0.85rem;">Grace</h4>
+  <p class="body-text">She moves through fire without burning. Not because she is immune, but because she has mastered herself so completely that even the flame bends around her.</p>
+</div>
+
+<div class="value-block">
+  <h4 class="section-heading" style="font-size: 0.85rem;">Protection</h4>
+  <p class="body-text">She is the guardian of the sacred flame &mdash; the living perimeter between the sisterhood and what would extinguish it. Nothing passes her without permission.</p>
+</div>
+
+<div class="value-block">
+  <h4 class="section-heading" style="font-size: 0.85rem;">Duality</h4>
+  <p class="body-text">Darkness and fire in one form. She is the proof that opposites do not cancel each other &mdash; they complete. The black swan does not choose between shadow and flame. She is both, always.</p>
+</div>
+
+</div>
+
+<p class="sacred-quote" style="max-width: 520px; margin: 48px auto 0; text-align: center;">"She was not sent to comfort you. She was sent to remind you what you are."<br><span class="attribution">&mdash; On the Seraphye</span></p>
+
+<div class="swan-divider"><svg width="48" height="48"><use href="#swan"/></svg></div>
+    </section>
+
+    <section id="conduct" class="section section--vignette act-break">
+<span class="chapter-label">ACT IV &mdash; THE ORDER</span>
+
+<h2 class="chapter-title">CODE OF CONDUCT</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="sacred-quote">"Order is not obedience. It is the architecture of trust."<br><span class="attribution">&mdash; The Veiled Council</span></p>
+
+<div class="body-text" style="max-width: 680px; margin: 0 auto 40px;">
+  <p>These are not suggestions. They are the foundation upon which this sisterhood stands. Every sister who wears the mark of &Pi;&Theta;&Iota; is bound by these decrees &mdash; not by force, but by the fire of shared conviction.</p>
+</div>
+
+<div class="rules-list">
+
+  <div class="rule-item">
+    <div class="rule-decree">Communication is KEY</div>
+    <div class="rule-expansion">Communicate effectively with your sisters. Open, honest communication prevents misunderstandings and strengthens our bonds.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">Respect Your Sisters</div>
+    <div class="rule-expansion">As sisters, we need to respect each other. Be mindful of how you speak to your sisters. Zero disrespect will be tolerated.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">No Intra-Sorority Dating</div>
+    <div class="rule-expansion">No dating one another unless the relationship was established before joining. If you were already together, that&rsquo;s acceptable. While in the sorority, new romantic relationships between members are absolutely not permitted.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">Honesty &amp; Trust</div>
+    <div class="rule-expansion">Always be honest and uphold that trust. Our sisterhood is built on mutual trust and integrity.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">Kindness &amp; Inclusivity</div>
+    <div class="rule-expansion">Encourage kindness and inclusivity among one another. Every sister deserves to feel welcomed and valued.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">Support Each Other</div>
+    <div class="rule-expansion">Support each other&rsquo;s growth in Second Life and real life, and prioritize well-being. We lift each other up.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">No Dating Related Organizations</div>
+    <div class="rule-expansion">No dating future brother/sister organization members or relations tied to fellow sorority sisters. This maintains appropriate boundaries.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">Respect Privacy</div>
+    <div class="rule-expansion">Respect each other&rsquo;s privacy. DO NOT SHARE EACH OTHER&rsquo;S PERSONAL INFORMATION WITHOUT CONSENT. This is a serious violation of trust.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">Confidentiality</div>
+    <div class="rule-expansion">KEEP ALL SORORITY BUSINESS CONFIDENTIAL regarding all sorority matters and discussions. What happens in &Pi;&Theta;&Iota; stays in &Pi;&Theta;&Iota;.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">Leadership &amp; Promotion</div>
+    <div class="rule-expansion">We promote internally and externally. Leadership roles are to be taken seriously. Under promotion, they are earned, not given.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">No Over-Sexualization</div>
+    <div class="rule-expansion">Do NOT over-sexualize the sorority! We represent divine femininity with class and respect.</div>
+  </div>
+
+  <div class="rule-item">
+    <div class="rule-decree">No Adoption Within Sorority</div>
+    <div class="rule-expansion">No adopting within the sorority. We are all equals as sisters.</div>
+  </div>
+
+</div>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="structure" class="section section--vignette">
+<span class="chapter-label">SECTION XIII</span>
+
+<h2 class="chapter-title">ORGANIZATIONAL STRUCTURE</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="sacred-quote">"A flame without structure is just destruction. We are deliberate."<br><span class="attribution">&mdash; The Veiled Council</span></p>
+
+<div class="body-text" style="max-width: 680px; margin: 0 auto 40px;">
+  <p>Pi Theta Iota operates through a tiered council system &mdash; four circles of responsibility, each with its own mandate. Authority flows from the top, but purpose flows through every tier.</p>
+</div>
+
+<div class="tier-diagram">
+  <div class="tier">
+    <span class="tier-name">The Veiled Council</span>
+    <span class="tier-roles">Head Founder &middot; Co-Founder &middot; President</span>
+  </div>
+  <div class="tier">
+    <span class="tier-name">The Heartkeepers</span>
+    <span class="tier-roles">Vice President &middot; Dean of Pledges &middot; Pledge Master &middot; Secretary</span>
+  </div>
+  <div class="tier">
+    <span class="tier-name">The Dreamwalkers</span>
+    <span class="tier-roles">Event Coordinator &middot; Fashion Maven</span>
+  </div>
+  <div class="tier">
+    <span class="tier-name">Daughters of the Veil</span>
+    <span class="tier-roles">All &Pi;&Theta;&Iota; sisters united in shadow and bloom</span>
+  </div>
+</div>
+
+<div class="divider divider--center" style="margin: 48px auto 40px;"></div>
+
+<h3 class="section-heading" style="margin-bottom: 32px;">Roles &amp; Responsibilities</h3>
+
+<div style="max-width: 680px; margin: 0 auto;">
+
+  <div class="role-item">
+    <div class="role-title">Head Founder</div>
+    <div class="role-holder">Sugg / Silent Flame</div>
+    <div class="role-desc">The origin and final authority. The Head Founder carries the vision from which all of &Pi;&Theta;&Iota; was born &mdash; shaping its direction, protecting its identity, and holding the flame that started it all.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">Co-Founder</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">Shares the founding vision and stands alongside the Head Founder in all matters of legacy and long-term direction. A mirror of the original flame.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">President</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">The operational leader. The President oversees daily governance, manages internal affairs, and serves as the primary voice of the sisterhood in all formal matters.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">Vice President</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">Second in command. Supports the President in all operational duties and assumes leadership in their absence. The steady hand when the flame flickers.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">Secretary</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">The keeper of records. Documents meetings, tracks attendance, manages communications, and ensures nothing spoken in council is lost to time.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">Dean of Pledges</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">Oversees the pledge process from first contact to full initiation. Responsible for evaluating potential sisters and ensuring every new member understands the weight of the veil they are stepping behind.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">Pledge Master</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">Works directly with pledges during their trial period. Guides, tests, and mentors &mdash; shaping raw potential into sisters who are ready to carry the flame.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">Fashion Maven</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">Curates the visual identity of &Pi;&Theta;&Iota; across all public-facing moments. From rep day aesthetics to event styling, the Maven ensures the sisterhood looks as powerful as it is.</div>
+  </div>
+
+  <div class="role-item">
+    <div class="role-title">Event Coordinator</div>
+    <div class="role-holder">To be appointed</div>
+    <div class="role-desc">Plans, organizes, and executes all sorority events &mdash; from philanthropic campaigns to sisterhood gatherings. Every event reflects the standard of &Pi;&Theta;&Iota;.</div>
+  </div>
+
+</div>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="membership" class="section section--vignette">
+<span class="chapter-label">SECTION XIV</span>
+
+<h2 class="chapter-title">MEMBERSHIP EXPECTATIONS</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="sacred-quote">"To wear the mark is to carry the standard."<br><span class="attribution">&mdash; &Pi;&Theta;&Iota; Doctrine</span></p>
+
+<div class="body-text" style="max-width: 680px; margin: 0 auto 40px;">
+  <p>Membership in Pi Theta Iota is a commitment, not a title. The following expectations apply to every active sister without exception.</p>
+</div>
+
+<div style="max-width: 680px; margin: 0 auto;">
+
+  <h3 class="section-heading">Monthly Dues</h3>
+  <ul class="body-text" style="list-style: none; padding: 0; margin-bottom: 32px;">
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> 2,000L$ per month, due on the 1st</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> 7-day grace period granted</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> If unable to pay on time, communicate before the deadline &mdash; silence is not an option</li>
+  </ul>
+
+  <h3 class="section-heading">Mandatory Meetings</h3>
+  <ul class="body-text" style="list-style: none; padding: 0; margin-bottom: 32px;">
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Every Sunday, attendance required</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Absence without prior notice is noted and addressed</li>
+  </ul>
+
+  <h3 class="section-heading">Rep Days &amp; Huntress Friday</h3>
+  <ul class="body-text" style="list-style: none; padding: 0; margin-bottom: 32px;">
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Huntress Friday &mdash; rep days are every other Friday</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Must be posted to the page for a minimum of 24 hours</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Formal fashion standards &mdash; incorporate &Pi;&Theta;&Iota; symbols and sorority colors</li>
+  </ul>
+
+  <h3 class="section-heading">Event Attendance</h3>
+  <ul class="body-text" style="list-style: none; padding: 0; margin-bottom: 32px;">
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Attendance at all sorority-hosted events is mandatory</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Philanthropic campaigns and collaborative events included</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Participation reflects commitment &mdash; not attendance alone</li>
+  </ul>
+
+  <h3 class="section-heading">Huntress of the Month</h3>
+  <ul class="body-text" style="list-style: none; padding: 0; margin-bottom: 32px;">
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Monthly recognition awarded to the sister who best exemplifies &Pi;&Theta;&Iota; values</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> Based on engagement, representation, attitude, and contribution</li>
+    <li style="padding-left: 20px; position: relative; margin-bottom: 10px;"><span style="color: var(--gold); position: absolute; left: 0;">&bull;</span> This is earned through action, not popularity</li>
+  </ul>
+
+</div>
+
+<svg class="swan-divider"><use href="#swan"/></svg>
+    </section>
+
+    <section id="philanthropy" class="section section--vignette act-break">
+<span class="chapter-label">ACT V &mdash; THE MISSION</span>
+<h2 class="chapter-title chapter-title--peach">Philanthropy</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="body-text" style="max-width: 600px; margin-bottom: 40px;">
+We do not simply speak of protection &mdash; we move toward it. Each month, the Huntress turns her gaze outward, carrying our fire to the causes that demand it. These are not obligations. They are extensions of who we are.
+</p>
+
+<div class="cause-grid" style="max-width: 720px;">
+
+  <div class="cause-card">
+    <span class="chapter-label" style="color: var(--peach);">APRIL</span>
+    <h3 class="section-heading" style="margin-top: 12px; font-size: 1.1rem;">RAINN</h3>
+    <p class="body-text" style="font-size: 0.88rem;">
+      The nation&rsquo;s largest anti-sexual violence organization. We stand with survivors because protection is not passive &mdash; it is a practice. Every voice believed is a wound answered.
+    </p>
+  </div>
+
+  <div class="cause-card">
+    <span class="chapter-label" style="color: var(--peach);">JUNE</span>
+    <h3 class="section-heading" style="margin-top: 12px; font-size: 1.1rem;">The Trevor Project</h3>
+    <p class="body-text" style="font-size: 0.88rem;">
+      Crisis support and suicide prevention for LGBTQ+ youth. No child should carry their fire alone. We show up so the next generation knows they are not invisible &mdash; they are infinite.
+    </p>
+  </div>
+
+  <div class="cause-card">
+    <span class="chapter-label" style="color: var(--peach);">SEPTEMBER</span>
+    <h3 class="section-heading" style="margin-top: 12px; font-size: 1.1rem;">Sickle Cell Disease Foundation of California</h3>
+    <p class="body-text" style="font-size: 0.88rem;">
+      Advocacy and support for those living with sickle cell disease. Resilience is not just our principle &mdash; it is their daily reality. We honor that endurance with action.
+    </p>
+  </div>
+
+  <div class="cause-card">
+    <span class="chapter-label" style="color: var(--peach);">OCTOBER &mdash; WEEK 2</span>
+    <h3 class="section-heading" style="margin-top: 12px; font-size: 1.1rem;">Pregnancy &amp; Infant Loss Awareness</h3>
+    <p class="body-text" style="font-size: 0.88rem;">
+      A grief carried in silence by too many. We hold space for the mothers and families who mourn what the world never met. Their love is not lesser for its brevity.
+    </p>
+  </div>
+
+  <div class="cause-card">
+    <span class="chapter-label" style="color: var(--peach);">OCTOBER &mdash; ONGOING</span>
+    <h3 class="section-heading" style="margin-top: 12px; font-size: 1.1rem;">National Breast Cancer Foundation</h3>
+    <p class="body-text" style="font-size: 0.88rem;">
+      Early detection, education, and support for women facing breast cancer. The Huntress does not look away from what is difficult. We face it &mdash; together, relentlessly, with resources in hand.
+    </p>
+  </div>
+
+  <div class="cause-card">
+    <span class="chapter-label" style="color: var(--peach);">DECEMBER</span>
+    <h3 class="section-heading" style="margin-top: 12px; font-size: 1.1rem;">Make-A-Wish Foundation</h3>
+    <p class="body-text" style="font-size: 0.88rem;">
+      Granting wishes for children with critical illnesses. In the darkest seasons, we become the light someone else needs. A wish fulfilled is a flame passed forward.
+    </p>
+  </div>
+
+</div>
+
+<svg class="swan-divider" style="margin-top: 48px;"><use href="#swan"/></svg>
+    </section>
+
+    <section id="traditions" class="section section--fire section--ceremonial">
+<span class="chapter-label">CHAPTER XVI</span>
+<h2 class="chapter-title chapter-title--crimson">Traditions &amp; Rituals</h2>
+
+<div class="divider divider--center"></div>
+
+<p class="body-text" style="max-width: 620px; margin-bottom: 40px;">
+A sisterhood without ritual is just a list of names. What we build here is older than us &mdash; it is the muscle memory of devotion, repeated until it becomes sacred. These are the fires we tend.
+</p>
+
+<div class="ember-border" style="max-width: 640px; margin-bottom: 32px;">
+  <h3 class="section-heading" style="margin-top: 0;">Huntress Friday</h3>
+  <p class="body-text">
+    Every other Friday, we wear the mark. Rep day is not vanity &mdash; it is visibility. A declaration that the Huntress walks among them. When a sister puts on her letters, she carries every woman who ever wore them before her. Posted to the page for 24 hours minimum &mdash; formal fashion, sorority symbols front and center.
+  </p>
+</div>
+
+<div class="ember-border" style="max-width: 640px; margin-bottom: 32px;">
+  <h3 class="section-heading" style="margin-top: 0;">Huntress of the Month</h3>
+  <p class="body-text">
+    Each month, one sister is recognized &mdash; not for perfection, but for fire. The woman who showed up hardest, gave the most of herself, and kept the flame bright when it would have been easier to let it dim. She is celebrated because excellence, witnessed, becomes contagious.
+  </p>
+</div>
+
+<div class="ember-border" style="max-width: 640px; margin-bottom: 32px;">
+  <h3 class="section-heading" style="margin-top: 0;">Annual Philanthropic Events</h3>
+  <p class="body-text">
+    Once a year, the sisterhood gathers its full force behind a cause greater than itself. These events are not performances &mdash; they are proof that our fire reaches beyond our own circle. The Huntress does not hoard her warmth.
+  </p>
+</div>
+
+<div class="ember-border" style="max-width: 640px; margin-bottom: 40px;">
+  <h3 class="section-heading" style="margin-top: 0;">Sisterhood Rituals</h3>
+  <p class="body-text">
+    There are things known only to those who have walked through the flame of initiation. Our rituals are sacred, confidential, and revealed only to the initiated. They are the heartbeat beneath the surface &mdash; the private fire that binds us beyond what any outsider could name.
+  </p>
+</div>
+
+<div class="sacred-quote" style="text-align: center; max-width: 520px; margin: 32px auto 0; border-left: none; padding-left: 0;">
+  <p style="font-size: 1.25rem;">&ldquo;What is revealed in flame stays in flame.&rdquo;</p>
+  <p class="attribution">&mdash; Sacred Law of Pi Theta Iota</p>
+</div>
+
+<svg class="swan-divider" style="margin-top: 48px;"><use href="#swan"/></svg>
+    </section>
+
+    <section id="principles" class="section section--vignette act-break">
+<span class="chapter-label">ACT VI &mdash; THE FLAME</span>
+<h2 class="chapter-title">Guiding Principles</h2>
+
+<div class="divider divider--center"></div>
+
+<div class="sacred-quote" style="max-width: 640px; margin: 24px 0 48px;">
+  <p>&ldquo;In every heart lies both light and shadow &mdash; I am the balance between them. Love fiercely, dream deeply, protect what is yours, and let no wound go unanswered. Beauty is my weapon, mercy my veil, and vengeance my quiet devotion.&rdquo;</p>
+  <p class="attribution">&mdash; Voice of Velithra</p>
+</div>
+
+<div style="max-width: 660px;">
+
+  <div style="margin-bottom: 48px;">
+    <div class="sacred-quote" style="margin-bottom: 16px; font-size: 1rem; border-left-width: 1px;">
+      <p>&ldquo;She does not choose the light over the dark. She carries both &mdash; and neither consumes her.&rdquo;</p>
+    </div>
+    <h3 class="section-heading" style="margin-top: 16px;">I. We Walk in Beauty and Shadow</h3>
+    <p class="body-text">
+      A Huntress does not deny her darkness to prove her worth. She walks with it &mdash; steadily, deliberately, like a woman who has learned that the flame casts both light and shadow, and she is the source of each. Our beauty is not the absence of pain. It is what remains after the fire has passed through us and found nothing it could destroy.
+    </p>
+  </div>
+
+  <div style="margin-bottom: 48px;">
+    <div class="sacred-quote" style="margin-bottom: 16px; font-size: 1rem; border-left-width: 1px;">
+      <p>&ldquo;Touch her gently, or learn why the fire learned her name.&rdquo;</p>
+    </div>
+    <h3 class="section-heading" style="margin-top: 16px;">II. Soft But Untouchable</h3>
+    <p class="body-text">
+      Softness is not surrender. We are gentle because we choose to be, not because we must be. The Huntress moves through the world with open hands and a steady gaze &mdash; but beneath the silk is something forged in fire that does not bend for those who mistake kindness for weakness. We are soft because we can afford to be. We are untouchable because we have earned it.
+    </p>
+  </div>
+
+  <div style="margin-bottom: 48px;">
+    <div class="sacred-quote" style="margin-bottom: 16px; font-size: 1rem; border-left-width: 1px;">
+      <p>&ldquo;They will try to make your beauty small. Let it burn.&rdquo;</p>
+    </div>
+    <h3 class="section-heading" style="margin-top: 16px;">III. Beauty Is Our Rebellion</h3>
+    <p class="body-text">
+      In a world that weaponizes a woman&rsquo;s appearance against her, we reclaim it as our own. Our beauty is not decoration &mdash; it is defiance. It is the fire we wear on the outside, daring anyone to underestimate what it protects. The Huntress adorns herself not for approval, but as an act of power. Every lipstick, every heel, every deliberate choice of how we present ourselves is a quiet revolution.
+    </p>
+  </div>
+
+  <div style="margin-bottom: 48px;">
+    <div class="sacred-quote" style="margin-bottom: 16px; font-size: 1rem; border-left-width: 1px;">
+      <p>&ldquo;The loudest room still fears the woman who says nothing.&rdquo;</p>
+    </div>
+    <h3 class="section-heading" style="margin-top: 16px;">IV. Silence Is Our Power</h3>
+    <p class="body-text">
+      We do not announce our plans. We do not argue with those who cannot hear us. The Huntress understands that silence is not emptiness &mdash; it is strategy. It is the held breath before the fire moves. Our silence is not absence. It is presence so controlled, so deliberate, that when we finally speak, the room has no choice but to listen.
+    </p>
+  </div>
+
+  <div style="margin-bottom: 48px;">
+    <div class="sacred-quote" style="margin-bottom: 16px; font-size: 1rem; border-left-width: 1px;">
+      <p>&ldquo;She rises &mdash; not for herself alone, but for every sister who ever knelt.&rdquo;</p>
+    </div>
+    <h3 class="section-heading" style="margin-top: 16px;">V. To Love Is to Protect. To Protect Is to Rise Radiant.</h3>
+    <p class="body-text">
+      This is the final principle because it is the one that holds every other. Love without protection is fragile. Protection without love is cold. But together &mdash; together they are the fire itself. A Huntress loves fiercely enough to stand between her sisters and anything that threatens them. And in that act of devotion, she does not diminish. She rises &mdash; radiant, unbreakable, aflame with purpose.
+    </p>
+  </div>
+
+</div>
+
+<svg class="swan-divider" style="margin-top: 24px;"><use href="#swan"/></svg>
+    </section>
+
+    <section id="creed" class="section section--fire section--ceremonial">
+<svg class="swan-cover" style="display: block; margin: 0 auto 40px;"><use href="#swan"/></svg>
+
+<div class="sacred-quote" style="text-align: center; max-width: 520px; margin: 0 auto 24px; border-left: none; padding-left: 0;">
+  <p style="font-size: 1.4rem;">&ldquo;From shadow, we bloom.&rdquo;</p>
+  <p class="attribution">&mdash; Legacy Motto of Pi Theta Iota</p>
+</div>
+
+<div class="sacred-quote" style="text-align: center; max-width: 520px; margin: 0 auto 48px; border-left: none; padding-left: 0;">
+  <p style="font-size: 1.4rem; color: var(--crimson); font-weight: 700;">&ldquo;From flame, we are forged. In fire, we remain.&rdquo;</p>
+  <p class="attribution">&mdash; The Fire Creed</p>
+</div>
+
+<div class="divider divider--wide divider--center"></div>
+
+<div class="ember-border" style="max-width: 620px; margin: 48px auto; text-align: center; padding-top: 32px;">
+
+  <p class="body-text" style="max-width: 580px; margin: 0 auto 20px; text-align: center; font-size: 1.05rem; line-height: 2;">
+    You were born to run the world<br>
+    with soft hands and sharp wisdom.<br>
+    Your beauty is not your weakness &mdash; it is your weapon,<br>
+    tempered in a fire that only you survived.
+  </p>
+
+  <p class="body-text" style="max-width: 580px; margin: 0 auto 20px; text-align: center; font-size: 1.05rem; line-height: 2;">
+    Your silence is not empty &mdash; it is your strategy,<br>
+    the held breath before the flame decides where to land.<br>
+    You do not ask for permission to burn.<br>
+    You never did.
+  </p>
+
+  <p class="body-text" style="max-width: 580px; margin: 0 auto 20px; text-align: center; font-size: 1.05rem; line-height: 2;">
+    We are here to protect each other,<br>
+    to love loudly and without apology,<br>
+    to move like goddesses through a world<br>
+    that never saw us coming &mdash;<br>
+    and still won&rsquo;t see us leave.
+  </p>
+
+  <p class="body-text" style="max-width: 580px; margin: 0 auto 20px; text-align: center; font-size: 1.05rem; line-height: 2;">
+    No matter where life carries you &mdash;<br>
+    your shadow, your strength, your fire,<br>
+    and your sisterhood remain.<br>
+    They cannot be taken. They cannot be dimmed.<br>
+    They were forged, and what is forged endures.
+  </p>
+
+  <p style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--gold); font-weight: 700; letter-spacing: 3px; margin-top: 32px;">
+    WE ARE &Pi;&Theta;&Iota;.
+  </p>
+
+</div>
+
+<div class="divider divider--wide divider--center"></div>
+
+<p style="font-family: var(--font-heading); font-size: clamp(1.4rem, 3vw, 2rem); color: var(--gold); font-weight: 700; letter-spacing: 4px; text-align: center; margin: 40px auto 16px;">
+  WE RISE. WE GUARD. WE BLOOM.
+</p>
+
+<p class="body-text" style="text-align: center; margin: 32px auto 0; opacity: 0.6; letter-spacing: 2px; font-size: 0.8rem; max-width: 400px;">
+  FOUNDED OCTOBER 31, 2025<br>BY SUGG / SILENT FLAME
+</p>
+
+<svg class="swan-divider" style="margin-top: 48px;"><use href="#swan"/></svg>
+    </section>
+
+    <section id="elevation" class="section section--vignette section--appendix">
+      <div class="appendix-title">Brand Elevation — Next Steps</div>
+      <ul class="appendix-list">
+        <li>Custom black swan SVG icon set for social media avatars and Discord</li>
+        <li>Animated cover version (CSS keyframes) for Discord server banner</li>
+        <li>Pledge invitation template using the same design system</li>
+        <li>Rep day photo frame overlay using the color palette</li>
+        <li>Ceremonial script template for initiations using the sacred quote treatment</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
